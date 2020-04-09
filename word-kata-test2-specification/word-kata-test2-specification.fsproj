@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>word_kata_test2_specification</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Language.fs" />
+        <Compile Include="Operations.fs" />
+    </ItemGroup>
+
+</Project>

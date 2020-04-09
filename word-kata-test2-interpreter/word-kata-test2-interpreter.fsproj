@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>work_kata_test2</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="WordSearch.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\word-kata-test2-specification\word-kata-test2-specification.fsproj" />
+    </ItemGroup>
+
+</Project>
