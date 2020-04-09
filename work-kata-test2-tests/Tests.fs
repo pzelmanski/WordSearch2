@@ -4,6 +4,7 @@ open work_kata_test2
 open FsUnit
 open Xunit
 open WordSearch
+open word_kata_test2_specification.Language
 
 
 [<Fact>]
@@ -17,7 +18,7 @@ let ``Given a grid and a word, it should return diagonal bottom right starting w
     
     // Act & Assert
     wordImLookingFor
-    |> In grid 
+    |> ``in`` grid 
     |> should equal expected
 
 [<Fact>]
@@ -32,7 +33,7 @@ let ``get diagonal bottom right from the middle of a grid`` () =
     
     // Act & Assert
     wordImLookingFor
-    |> In grid 
+    |> ``in`` grid 
     |> should equal expected
 
 [<Fact>]
@@ -47,7 +48,7 @@ let ``get diagonal bottom right from the right edge of a grid`` () =
     
     // Act & Assert
     wordImLookingFor
-    |> In grid
+    |> ``in`` grid
     |> should equal expected
 
 [<Fact>]
@@ -61,7 +62,7 @@ let ``get diagonal bottom right when first letter of word does not exist in gird
     
     // Act & Assert
     wordImLookingFor
-    |> In grid
+    |> ``in`` grid
     |> should equal List.empty<string>
     
     
@@ -73,10 +74,16 @@ let ``get diagonal in all directions when first letter of word does not exist in
           "ghio"
           "jklp" ]
     let wordImLookingFor = "fxy"
-    let expected = ["fb"; "fm"; "fhj"; "fo"]
+    let expected =
+        {
+            NW = "fb";
+            NE = "fm";
+            SW = "fhj";
+            SE = "fo"
+        }
 
     // Act & Assert
     wordImLookingFor
-    |> In grid
+    |> ``in`` grid
     |> should equal expected
     

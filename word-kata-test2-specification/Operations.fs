@@ -3,4 +3,4 @@
 open Language
 
 module Operations =
-    type GetDiagonal = Grid -> Word -> Grid
+    type GetDiagonal = Grid -> Word -> DiagonalDirections list
