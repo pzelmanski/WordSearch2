@@ -1,10 +1,16 @@
 ﻿namespace word_kata_test2_specification
 
+
 module Language =
     type SingleLine = string
     type Grid = SingleLine list
     type Word = string
-
+    type Submission =
+        {
+            Grid : Grid
+            Word : Word
+        }
+    
     type DiagonalDirections =
         {
             NE : SingleLine
@@ -12,3 +18,14 @@ module Language =
             SE : SingleLine
             SW : SingleLine
         }
+    
+    type VerticalDirections =
+        {
+            Up : SingleLine
+            Down : SingleLine
+        }
+    
+    type AllDirections =
+        | Diagonal of DiagonalDirections list
+        | Vertical of VerticalDirections list
+

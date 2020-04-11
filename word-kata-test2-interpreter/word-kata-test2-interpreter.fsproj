@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Diagonal.fs" />
+        <Compile Include="Vertical.fs" />
         <Compile Include="WordSearch.fs" />
     </ItemGroup>
 
