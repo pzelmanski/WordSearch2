@@ -13,11 +13,11 @@ module VerticalTests =
         let word = "axy"
 
         let submission =
-            {Grid = grid
-             Word = word}
+            { Grid = grid
+              Word = word }
         
         // Act & Assert
-        Vertical.``do`` submission
+        Vertical.getDirections submission
         |> should equal
                [ { Up = "a"
                    Down = "b" } ]

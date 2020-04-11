@@ -37,12 +37,11 @@ module Diagonal =
            SW = getDiagonal(grid, (maxPosition, maxPosition), initialPosition, southWest)
         }
 
-    let singleLines: GetDiagonal =
-        fun submission ->
-            submission.Grid
-            |> List.mapi (getPositionsOfWordsFirstLetter  submission.Word)
-            |> List.choose id
-            |> List.map (getDiagonalBottomDown submission.Grid)
+    let singleLines submission =
+        submission.Grid
+        |> List.mapi (getPositionsOfWordsFirstLetter  submission.Word)
+        |> List.choose id
+        |> List.map (getDiagonalBottomDown submission.Grid)
 
     let mapTo (diagonal : DiagonalDirections list) : Directions =
         let d = diagonal
@@ -50,6 +49,7 @@ module Diagonal =
                 |> List.concat
         Directions.Diagonal d
         
-    let doSth submission : Directions =
-        singleLines submission
-        |> mapTo
+    let getDirections : GetDirections =
+        fun submission ->
+            singleLines submission
+            |> mapTo

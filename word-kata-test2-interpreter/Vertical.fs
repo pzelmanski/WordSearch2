@@ -4,9 +4,9 @@ open word_kata_test2_specification.Language
 open word_kata_test2_specification.Operations
 
 module Vertical =
-    let ``do`` : GetVertical =
+    let getDirections : GetDirections =
             fun submission -> 
-            [{
+            Directions.Vertical [{
                 Up = "a"
                 Down = "b"
             }]

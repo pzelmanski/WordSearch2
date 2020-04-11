@@ -49,7 +49,7 @@ module Tests =
             |> MyDirections.Diagonal
 
         // Act & Assert
-        directions doSth submission
+        directions getDirections submission
         |> should equal expected
 
 
