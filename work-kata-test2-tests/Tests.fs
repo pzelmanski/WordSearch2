@@ -14,27 +14,19 @@ let ``Given a grid and a word, it should return diagonal bottom right starting w
           "def"
           "ghi" ]
     let wordImLookingFor = "axy"
-    let expected = ["aei"]
+    let expected =
+        [{
+            NW = "a";
+            NE = "a";
+            SW = "a";
+            SE = "aei"
+        }]
     
     // Act & Assert
     wordImLookingFor
     |> ``in`` grid 
     |> should equal expected
 
-[<Fact>]
-let ``get diagonal bottom right from the middle of a grid`` () =  
-    let grid =
-        [ "abcm"
-          "defn"
-          "ghio"
-          "jklp" ]
-    let wordImLookingFor = "exy"
-    let expected = ["eip"]
-    
-    // Act & Assert
-    wordImLookingFor
-    |> ``in`` grid 
-    |> should equal expected
 
 [<Fact>]
 let ``get diagonal bottom right from the right edge of a grid`` () =  
@@ -44,7 +36,13 @@ let ``get diagonal bottom right from the right edge of a grid`` () =
           "ghio"
           "jklp" ]
     let wordImLookingFor = "nope"
-    let expected = ["n"]
+    let expected =
+        [{
+            NW = "nc";
+            NE = "n";
+            SW = "nik";
+            SE = "n"
+        }]
     
     // Act & Assert
     wordImLookingFor
@@ -52,22 +50,23 @@ let ``get diagonal bottom right from the right edge of a grid`` () =
     |> should equal expected
 
 [<Fact>]
-let ``get diagonal bottom right when first letter of word does not exist in gird`` () =  
+let ``get diagonal when first letter of word does not exist in gird`` () =  
     let grid =
         [ "abcm"
           "defn"
           "ghio"
           "jklp" ]
     let wordImLookingFor = "xmd"
+    let expected = List.empty<DiagonalDirections>
     
     // Act & Assert
     wordImLookingFor
     |> ``in`` grid
-    |> should equal List.empty<string>
+    |> should equal expected
     
     
 [<Fact>]
-let ``get diagonal in all directions when first letter of word does not exist in gird`` () =  
+let ``get diagonal in all directions`` () =  
     let grid =
         [ "abcm"
           "defn"
@@ -75,12 +74,12 @@ let ``get diagonal in all directions when first letter of word does not exist in
           "jklp" ]
     let wordImLookingFor = "fxy"
     let expected =
-        {
+        [{
             NW = "fb";
             NE = "fm";
             SW = "fhj";
             SE = "fo"
-        }
+        }]
 
     // Act & Assert
     wordImLookingFor

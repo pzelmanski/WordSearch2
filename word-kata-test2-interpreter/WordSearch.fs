@@ -8,7 +8,7 @@ module WordSearch =
     let getPositionsOfWordsFirstLetter (wordToSearch: string) (verticalIndex: int) (line: string) =
         match line.IndexOf(wordToSearch.[0]) with
         | -1 -> None
-        | index -> Some(index, verticalIndex)
+        | index -> Some(verticalIndex, index)
 
     let northEast currentPos =
         (fst currentPos - 1, snd currentPos + 1) 
@@ -25,7 +25,7 @@ module WordSearch =
             || fst current < 0
             || snd current < 0) then ""
         else
-            (string) grid.[snd current].[fst current]
+            (string) grid.[fst current].[snd current]
             + getDiagonal(grid, stop, (positionFunction current), positionFunction)
 
     let getDiagonalBottomDown (grid: Grid) (initialPosition: int * int) : DiagonalDirections =
