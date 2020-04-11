@@ -5,7 +5,7 @@ open word_kata_test2_specification.Operations
 
 module Vertical =
     let ``do`` : GetVertical =
-            fun grid word -> 
+            fun submission -> 
             [{
                 Up = "a"
                 Down = "b"

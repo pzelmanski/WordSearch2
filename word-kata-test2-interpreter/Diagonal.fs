@@ -38,18 +38,18 @@ module Diagonal =
         }
 
     let singleLines: GetDiagonal =
-        fun grid word ->
-            grid
-            |> List.mapi (getPositionsOfWordsFirstLetter word)
+        fun submission ->
+            submission.Grid
+            |> List.mapi (getPositionsOfWordsFirstLetter  submission.Word)
             |> List.choose id
-            |> List.map (getDiagonalBottomDown grid)
+            |> List.map (getDiagonalBottomDown submission.Grid)
 
-    let mapTo (diagonal : DiagonalDirections list) : AllDirections =
+    let mapTo (diagonal : DiagonalDirections list) : Directions =
         let d = diagonal
                 |> List.map(fun v -> [v])
                 |> List.concat
-        AllDirections.Diagonal d
+        Directions.Diagonal d
         
-    let doSth grid word : AllDirections =
-        singleLines grid word
+    let doSth submission : Directions =
+        singleLines submission
         |> mapTo

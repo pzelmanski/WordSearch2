@@ -10,11 +10,14 @@ module VerticalTests =
     let ``Should return``() =
         let grid =
             [ "abc"; "def"; "ghi" ]
-        let wordImLookingFor = "axy"
+        let word = "axy"
 
+        let submission =
+            {Grid = grid
+             Word = word}
+        
         // Act & Assert
-        wordImLookingFor
-        |> Vertical.``do`` grid
+        Vertical.``do`` submission
         |> should equal
                [ { Up = "a"
                    Down = "b" } ]

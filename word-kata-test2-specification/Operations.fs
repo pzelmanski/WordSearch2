@@ -3,7 +3,7 @@
 open Language
 
 module Operations =
-    type GetDiagonal = Grid -> Word -> DiagonalDirections list
-    type GetVertical = Grid -> Word -> VerticalDirections list
-    type GetDirections = Grid -> Word -> AllDirections
-    type GetLine =  GetDirections -> Grid -> Word -> AllDirections
+    type GetDiagonal = Submission -> DiagonalDirections list
+    type GetVertical = Submission -> VerticalDirections list
+    type GetDirections = Submission -> Directions
+    type GetLine =  GetDirections -> Submission -> Directions

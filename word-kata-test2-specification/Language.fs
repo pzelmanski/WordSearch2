@@ -25,7 +25,6 @@ module Language =
             Down : SingleLine
         }
     
-    type AllDirections =
+    type Directions =
         | Diagonal of DiagonalDirections list
         | Vertical of VerticalDirections list
-

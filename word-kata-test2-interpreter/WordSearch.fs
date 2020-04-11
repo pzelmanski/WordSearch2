@@ -4,5 +4,5 @@ open word_kata_test2_specification.Operations
 
 module WordSearch =
     let directions : GetLine =
-            fun fn grid word ->
-                fn grid word
+            fun fn submission ->
+                fn submission
