@@ -29,3 +29,23 @@ module VerticalTests =
         submission
         |> Vertical.getDirections
         |> should equal expected
+
+    [<Fact>]
+    let ``Should return up properly``() =
+        let grid =
+            [ "abc"
+              "def"
+              "ghi" ]
+        let word = "gxy"
+
+        let submission =
+            { Grid = grid
+              Word = word }
+        let expected = [ { Up = "gda"
+                           Down = "g" } ]
+                       |> MyDirections.Vertical
+                       |> Some
+        // Act & Assert
+        submission
+        |> Vertical.getDirections
+        |> should equal expected
