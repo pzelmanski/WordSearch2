@@ -8,6 +8,7 @@
         <e p="Converters.fs" t="Include" />
         <e p="Coordinates.fs" t="Include" />
         <e p="Diagonal.fs" t="Include" />
+        <e p="LineGetter.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Vertical.fs" t="Include" />
         <e p="word-kata-test2-interpreter.fsproj" t="IncludeRecursive" />

@@ -4,6 +4,7 @@ open System.Linq
 open word_kata_test2_specification.Language
 open word_kata_test2_specification.Operations
 open Converters
+open LineGetter
 
 module Diagonal =
     let northEast currentPos =
@@ -15,22 +16,13 @@ module Diagonal =
     let southWest currentPos =
         {X = currentPos.X + 1; Y = currentPos.Y - 1}
 
-    let rec getSingleDiagonal(grid: Grid, stop: Coordinate, current: Coordinate, positionFunction): string =
-        if (current.X >= stop.X
-            || current.Y >= stop.Y
-            || current.X < 0
-            || current.Y < 0) then ""
-        else
-            (string) grid.[current.X].[current.Y]
-            + getSingleDiagonal(grid, stop, (positionFunction current), positionFunction)
-
     let getDiagonalAllDirections (grid: Grid) (initialPosition: Coordinate) : DiagonalDirections =
         let maxPosition = Enumerable.Count grid
         {
-           NE = getSingleDiagonal(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northEast);
-           NW = getSingleDiagonal(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northWest);
-           SE = getSingleDiagonal(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southEast);
-           SW = getSingleDiagonal(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southWest)
+           NE = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northEast);
+           NW = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northWest);
+           SE = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southEast);
+           SW = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southWest)
         }
 
     let singleLines (singleLineSubmission : FirstLetterSubmission) =
