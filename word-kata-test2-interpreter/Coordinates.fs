@@ -1,10 +1,9 @@
 ﻿namespace work_kata_test2
 
 open word_kata_test2_specification.Language
-open word_kata_test2_specification.Operations
 
 module Coordinates =
-    let getPositionsOfWordsFirstLetter (firstLetter: FirstLetter) (verticalIndex: int) (line: string) =
+    let private getPositionsOfWordsFirstLetter (firstLetter: FirstLetter) (verticalIndex: int) (line: string) =
         match line.IndexOf(firstLetter) with
         | -1 -> None
         | index -> Some {X = verticalIndex; Y = index}
@@ -13,5 +12,3 @@ module Coordinates =
         submission.Grid
         |> List.mapi (getPositionsOfWordsFirstLetter submission.Word.FirstLetter)
         |> List.choose id
-        
-//    let getCoordinates : GetPositionOfFirstLetter =

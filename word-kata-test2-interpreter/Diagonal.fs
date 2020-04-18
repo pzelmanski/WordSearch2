@@ -6,11 +6,6 @@ open word_kata_test2_specification.Operations
 open Converters
 
 module Diagonal =
-    let getPositionsOfWordsFirstLetter (wordToSearch: FirstLetterWord) (verticalIndex: int) (line: string) =
-        match line.IndexOf(wordToSearch.FirstLetter) with
-        | -1 -> None
-        | index -> Some(verticalIndex, index)
-
     let northEast currentPos =
         {X = currentPos.X - 1; Y = currentPos.Y + 1} 
     let northWest currentPos =
@@ -39,7 +34,8 @@ module Diagonal =
         }
 
     let singleLines (singleLineSubmission : FirstLetterSubmission) =
-        Coordinates.OfFirstLetter singleLineSubmission
+        singleLineSubmission
+        |> Coordinates.OfFirstLetter
         |> List.map (getDiagonalAllDirections singleLineSubmission.Grid)
 
     let mapTo (diagonal : DiagonalDirections list) : Directions =
