@@ -3,7 +3,7 @@ namespace work_kata_test2_Tests
 open word_kata_test2_specification
 open work_kata_test2
 
-module Tests =
+module DiagonalTests =
 
     open FsUnit
     open Xunit

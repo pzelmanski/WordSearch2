@@ -19,29 +19,29 @@ module Diagonal =
     let southWest currentPos =
         (fst currentPos + 1, snd currentPos - 1)
 
-    let rec getDiagonal(grid: Grid, stop: int * int, current: int * int, positionFunction): string =
+    let rec getSingleDiagonal(grid: Grid, stop: int * int, current: int * int, positionFunction): string =
         if (fst current >= fst stop
             || snd current >= snd stop
             || fst current < 0
             || snd current < 0) then ""
         else
             (string) grid.[fst current].[snd current]
-            + getDiagonal(grid, stop, (positionFunction current), positionFunction)
+            + getSingleDiagonal(grid, stop, (positionFunction current), positionFunction)
 
-    let getDiagonalBottomDown (grid: Grid) (initialPosition: int * int) : DiagonalDirections =
+    let getDiagonalAllDirections (grid: Grid) (initialPosition: int * int) : DiagonalDirections =
         let maxPosition = Enumerable.Count grid
         {
-           NE = getDiagonal(grid, (maxPosition, maxPosition), initialPosition, northEast);
-           NW = getDiagonal(grid, (maxPosition, maxPosition), initialPosition, northWest);
-           SE = getDiagonal(grid, (maxPosition, maxPosition), initialPosition, southEast);
-           SW = getDiagonal(grid, (maxPosition, maxPosition), initialPosition, southWest)
+           NE = getSingleDiagonal(grid, (maxPosition, maxPosition), initialPosition, northEast);
+           NW = getSingleDiagonal(grid, (maxPosition, maxPosition), initialPosition, northWest);
+           SE = getSingleDiagonal(grid, (maxPosition, maxPosition), initialPosition, southEast);
+           SW = getSingleDiagonal(grid, (maxPosition, maxPosition), initialPosition, southWest)
         }
 
     let singleLines submission =
         submission.Grid
-        |> List.mapi (getPositionsOfWordsFirstLetter  submission.Word)
+        |> List.mapi (getPositionsOfWordsFirstLetter submission.Word)
         |> List.choose id
-        |> List.map (getDiagonalBottomDown submission.Grid)
+        |> List.map (getDiagonalAllDirections submission.Grid)
 
     let mapTo (diagonal : DiagonalDirections list) : Directions =
         let d = diagonal
