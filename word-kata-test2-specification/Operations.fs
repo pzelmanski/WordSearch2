@@ -3,5 +3,7 @@
 open Language
 
 module Operations =
-    type GetDirections = Submission -> Directions
-    type GetLine =  GetDirections -> Submission -> Directions
+    type SubmissionIntoFirstLetterSubmission = Submission -> FirstLetterSubmission option
+    type GetPositionOfFirstLetter = FirstLetterSubmission -> Coordinates
+    type GetDirections = Submission -> Directions option
+    type GetLine = GetDirections -> Submission -> Directions option

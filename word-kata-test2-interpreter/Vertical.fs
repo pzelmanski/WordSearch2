@@ -6,8 +6,11 @@ open word_kata_test2_specification.Operations
 module Vertical =
     let getDirections : GetDirections =
             fun submission -> 
-            Directions.Vertical [{
+//                submission |> singleLines
+//                           |> mapTo
+             Directions.Vertical [{
                 Up = "a"
                 Down = "b"
-            }]
-         
+            }] |> Some
+
+           

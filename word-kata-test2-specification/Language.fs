@@ -2,9 +2,28 @@
 
 
 module Language =
+    
+    type X = int
+    type Y = int
+    type Coordinate = (X * Y)
+    type Coordinates = Coordinate list
     type SingleLine = string
     type Grid = SingleLine list
     type Word = string
+    
+    type FirstLetter = char
+    
+    type FirstLetterWord = {
+                     FirstLetter : FirstLetter
+                     Remaining : char list
+                  }
+    
+    type FirstLetterSubmission =
+        {
+            Grid : Grid
+            Word : FirstLetterWord
+        }
+        
     type Submission =
         {
             Grid : Grid

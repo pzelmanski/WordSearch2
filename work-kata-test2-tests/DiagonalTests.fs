@@ -17,9 +17,9 @@ module DiagonalTests =
     let ``Given a grid and a word, it should return diagonal bottom right starting with words first letter``() =
 
         let grid = [ "abc"; "def"; "ghi" ]
-        let word = "axy"
+        let word = { FirstLetter = 'a' ; Remaining = ['x' ; 'y'] }
 
-        let submission =
+        let submission : FirstLetterSubmission =
             { Grid = grid
               Word = word }
 
@@ -37,6 +37,7 @@ module DiagonalTests =
         let grid =
             [ "abc"; "def"; "ghi" ]
         let word = "axy"
+
         let submission =
             { Grid = grid
               Word = word }
@@ -47,6 +48,7 @@ module DiagonalTests =
                 SW = "a"
                 SE = "aei" } ]
             |> MyDirections.Diagonal
+            |> Some
 
         // Act & Assert
         directions getDirections submission
@@ -54,11 +56,15 @@ module DiagonalTests =
 
 
     [<Fact>]
-    let ``get diagonal bottom right from the right edge of a grid``() =
+    let ``get diagonal from the right edge of a grid``() =
         let grid =
-            [ "abcm"; "defn"; "ghio"; "jklp" ]
-        let word = "nope"
-        let submission =
+            [ "abcm"
+              "defn"
+              "ghio"
+              "jklp" ]
+        let word = { FirstLetter = 'n' ; Remaining = ['o' ; 'p'; 'e'] }
+
+        let submission : FirstLetterSubmission =
             { Grid = grid
               Word = word }
         
@@ -77,9 +83,10 @@ module DiagonalTests =
     let ``get diagonal when first letter of word does not exist in gird``() =
         let grid =
             [ "abcm"; "defn"; "ghio"; "jklp" ]
-        let word = "xmd"
         
-        let submission =
+        let word = { FirstLetter = 'x' ; Remaining = ['m' ; 'd'] }
+
+        let submission : FirstLetterSubmission =
             {Grid = grid
              Word = word}
         
@@ -94,9 +101,9 @@ module DiagonalTests =
     let ``get diagonal in all directions``() =
         let grid =
             [ "abcm"; "defn"; "ghio"; "jklp" ]
-        let word = "fxy"
+        let word = { FirstLetter = 'f' ; Remaining = ['x' ; 'y'] }
 
-        let submission =
+        let submission : FirstLetterSubmission =
             {Grid = grid
              Word = word}
         

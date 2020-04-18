@@ -3,10 +3,28 @@
 open System.Linq
 open word_kata_test2_specification.Language
 open word_kata_test2_specification.Operations
+open Converters
 
-module Diagonal =
+
+module Coordinates =
     let getPositionsOfWordsFirstLetter (wordToSearch: string) (verticalIndex: int) (line: string) =
         match line.IndexOf(wordToSearch.[0]) with
+        | -1 -> None
+        | index -> Some( )
+    
+    let singleLines submission =
+        submission.Grid
+        |> List.mapi (getPositionsOfWordsFirstLetter submission.Word)
+        |> List.choose id
+        
+//    let getCoordinates : GetPositionOfFirstLetter =
+        
+        
+        
+
+module Diagonal =
+    let getPositionsOfWordsFirstLetter (wordToSearch: FirstLetterWord) (verticalIndex: int) (line: string) =
+        match line.IndexOf(wordToSearch.FirstLetter) with
         | -1 -> None
         | index -> Some(verticalIndex, index)
 
@@ -37,19 +55,25 @@ module Diagonal =
            SW = getSingleDiagonal(grid, (maxPosition, maxPosition), initialPosition, southWest)
         }
 
-    let singleLines submission =
-        submission.Grid
-        |> List.mapi (getPositionsOfWordsFirstLetter submission.Word)
+    let singleLines (singleLineSubmission : FirstLetterSubmission) =
+        singleLineSubmission.Grid
+        |> List.mapi (getPositionsOfWordsFirstLetter singleLineSubmission.Word)
         |> List.choose id
-        |> List.map (getDiagonalAllDirections submission.Grid)
+        |> List.map (getDiagonalAllDirections singleLineSubmission.Grid)
 
     let mapTo (diagonal : DiagonalDirections list) : Directions =
         let d = diagonal
                 |> List.map(fun v -> [v])
                 |> List.concat
         Directions.Diagonal d
-        
+    
     let getDirections : GetDirections =
         fun submission ->
-            singleLines submission
-            |> mapTo
+            submission |> submissionToFirstLetterSubmission
+                       |> function
+                           | Some firstLetterSubmission ->
+                                    firstLetterSubmission
+                                    |> singleLines
+                                    |> mapTo
+                                    |> Some
+                           | None -> None

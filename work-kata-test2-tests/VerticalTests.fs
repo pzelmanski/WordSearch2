@@ -7,9 +7,11 @@ module VerticalTests =
     open word_kata_test2_specification.Language
 
     [<Fact>]
-    let ``Should return``() =
+    let ``Should return down properly``() =
         let grid =
-            [ "abc"; "def"; "ghi" ]
+            [ "abc"
+              "def"
+              "ghi" ]
         let word = "axy"
 
         let submission =
@@ -17,7 +19,8 @@ module VerticalTests =
               Word = word }
         
         // Act & Assert
-        Vertical.getDirections submission
+        submission
+        |> Vertical.getDirections
         |> should equal
-               [ { Up = "a"
-                   Down = "b" } ]
+               [ { Up = ""
+                   Down = "adg" } ]
