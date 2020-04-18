@@ -5,7 +5,7 @@ module Language =
     
     type X = int
     type Y = int
-    type Coordinate = (X * Y)
+    type Coordinate = { X : X ; Y : Y }
     type Coordinates = Coordinate list
     type SingleLine = string
     type Grid = SingleLine list
