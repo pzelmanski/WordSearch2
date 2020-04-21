@@ -16,7 +16,9 @@ module DiagonalTests =
     [<Fact>]
     let ``Given a grid and a word, it should return diagonal bottom right starting with words first letter``() =
 
-        let grid = [ "abc"; "def"; "ghi" ]
+        let grid = [ "abc"
+                     "def"
+                     "ghi" ]
         let word = { FirstLetter = 'a' ; Remaining = ['x' ; 'y'] }
 
         let submission : FirstLetterSubmission =
@@ -35,7 +37,9 @@ module DiagonalTests =
     [<Fact>]
     let ``It should properly inject SingleLines into a GetSth``() =
         let grid =
-            [ "abc"; "def"; "ghi" ]
+            [ "abc"
+              "def"
+              "ghi" ]
         let word = "axy"
 
         let submission =
@@ -82,7 +86,10 @@ module DiagonalTests =
     [<Fact>]
     let ``get diagonal when first letter of word does not exist in gird``() =
         let grid =
-            [ "abcm"; "defn"; "ghio"; "jklp" ]
+            [ "abcm"
+              "defn"
+              "ghio"
+              "jklp" ]
         
         let word = { FirstLetter = 'x' ; Remaining = ['m' ; 'd'] }
 
@@ -100,7 +107,10 @@ module DiagonalTests =
     [<Fact>]
     let ``get diagonal in all directions``() =
         let grid =
-            [ "abcm"; "defn"; "ghio"; "jklp" ]
+            [ "abcm"
+              "defn"
+              "ghio"
+              "jklp" ]
         let word = { FirstLetter = 'f' ; Remaining = ['x' ; 'y'] }
 
         let submission : FirstLetterSubmission =

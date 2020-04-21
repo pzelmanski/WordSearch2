@@ -38,12 +38,21 @@ module Language =
             SW : SingleLine
         }
     
-    type VerticalDirections =
+    type StraightDirections =
         {
             Up : SingleLine
             Down : SingleLine
+            Left : SingleLine
+            Right : SingleLine
         }
     
     type Directions =
         | Diagonal of DiagonalDirections list
-        | Vertical of VerticalDirections list
+        | Straight of StraightDirections list
+    
+    type AllDirections =
+        {
+            Lines : SingleLine list
+            
+        }
+    

@@ -10,7 +10,7 @@
         <Compile Include="Converters.fs" />
         <Compile Include="Coordinates.fs" />
         <Compile Include="Diagonal.fs" />
-        <Compile Include="Vertical.fs" />
+        <Compile Include="Straight.fs" />
         <Compile Include="WordSearch.fs" />
     </ItemGroup>
 

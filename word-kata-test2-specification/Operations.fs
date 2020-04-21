@@ -7,3 +7,4 @@ module Operations =
     type GetPositionOfFirstLetter = FirstLetterSubmission -> Coordinates
     type GetDirections = Submission -> Directions option
     type GetLine = GetDirections -> Submission -> Directions option
+    type DirectionsIntoAllDirection = Directions -> Directions

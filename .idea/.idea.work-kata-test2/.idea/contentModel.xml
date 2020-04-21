@@ -10,7 +10,7 @@
         <e p="Diagonal.fs" t="Include" />
         <e p="LineGetter.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
-        <e p="Vertical.fs" t="Include" />
+        <e p="Straight.fs" t="Include" />
         <e p="word-kata-test2-interpreter.fsproj" t="IncludeRecursive" />
         <e p="WordSearch.fs" t="Include" />
       </e>
@@ -26,7 +26,8 @@
         <e p="DiagonalTests.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.fs" t="Include" />
-        <e p="VerticalTests.fs" t="Include" />
+        <e p="StraightTests.fs" t="Include" />
+        <e p="WordSearchTests.fs" t="Include" />
         <e p="work-kata-test2-Tests.fsproj" t="IncludeRecursive" />
       </e>
       <e p="work-kata-test2.sln" t="IncludeFlat" />

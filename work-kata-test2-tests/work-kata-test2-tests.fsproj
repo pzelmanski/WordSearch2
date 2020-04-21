@@ -10,7 +10,8 @@
 
     <ItemGroup>
         <Compile Include="DiagonalTests.fs" />
-        <Compile Include="VerticalTests.fs" />
+        <Compile Include="StraightTests.fs" />
+        <Compile Include="WordSearchTests.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
