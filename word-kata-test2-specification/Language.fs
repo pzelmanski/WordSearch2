@@ -2,9 +2,8 @@
 
 
 module Language =
-    type X = int
-    type Y = int
-    type Coordinate = { HorizontalIndex : X ; VerticalIndex : Y }
+    type Index = int
+    type Coordinate = { HorizontalIndex : Index ; VerticalIndex : Index }
     type Coordinates = Coordinate list
     type SingleLine = string
     type Grid = SingleLine list
