@@ -7,17 +7,17 @@ open Converters
 open LineGetter
 
 module Straight =
-    let up currentPos = {X = currentPos.X; Y = currentPos.Y - 1} 
-    let down currentPos = {X = currentPos.X; Y = currentPos.Y + 1}
-    let left currentPos = {X = currentPos.X - 1; Y = currentPos.Y}
-    let right currentPos = {X = currentPos.X + 1; Y = currentPos.Y}
+    let up currentPos = {HorizontalIndex = currentPos.HorizontalIndex; VerticalIndex = currentPos.VerticalIndex - 1} 
+    let down currentPos = {HorizontalIndex = currentPos.HorizontalIndex; VerticalIndex = currentPos.VerticalIndex + 1}
+    let left currentPos = {HorizontalIndex = currentPos.HorizontalIndex - 1; VerticalIndex = currentPos.VerticalIndex}
+    let right currentPos = {HorizontalIndex = currentPos.HorizontalIndex + 1; VerticalIndex = currentPos.VerticalIndex}
     
     let private getDiagonalAllDirections (grid : Grid) (initialPosition: Coordinate) : StraightDirections =
         let maxPosition = Enumerable.Count grid 
-        { Up = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, up)
-          Down = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, down)
-          Left = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, left)
-          Right = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, right)}
+        { Up = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, up)
+          Down = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, down)
+          Left = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, left)
+          Right = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, right)}
         
     let private mapTo (diagonal : StraightDirections list) : Directions =
         let d = diagonal

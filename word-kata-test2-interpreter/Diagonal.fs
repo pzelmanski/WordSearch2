@@ -8,21 +8,21 @@ open LineGetter
 
 module Diagonal =
     let northEast currentPos =
-        {X = currentPos.X + 1; Y = currentPos.Y - 1} 
+        {HorizontalIndex = currentPos.HorizontalIndex + 1; VerticalIndex = currentPos.VerticalIndex - 1} 
     let northWest currentPos =
-        {X = currentPos.X - 1; Y = currentPos.Y - 1}
+        {HorizontalIndex = currentPos.HorizontalIndex - 1; VerticalIndex = currentPos.VerticalIndex - 1}
     let southEast currentPos =
-        {X = currentPos.X + 1; Y = currentPos.Y + 1}
+        {HorizontalIndex = currentPos.HorizontalIndex + 1; VerticalIndex = currentPos.VerticalIndex + 1}
     let southWest currentPos =
-        {X = currentPos.X - 1; Y = currentPos.Y + 1}
+        {HorizontalIndex = currentPos.HorizontalIndex - 1; VerticalIndex = currentPos.VerticalIndex + 1}
 
     let getDiagonalAllDirections (grid: Grid) (initialPosition: Coordinate) : DiagonalDirections =
         let maxPosition = Enumerable.Count grid
         {
-           NE = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northEast);
-           NW = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, northWest);
-           SE = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southEast);
-           SW = getSingle(grid, {X = maxPosition; Y = maxPosition}, initialPosition, southWest)
+           NE = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, northEast);
+           NW = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, northWest);
+           SE = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, southEast);
+           SW = getSingle(grid, {HorizontalIndex = maxPosition; VerticalIndex = maxPosition}, initialPosition, southWest)
         }
 
     let singleLines (singleLineSubmission : FirstLetterSubmission) =
