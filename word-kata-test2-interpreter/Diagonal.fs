@@ -8,13 +8,13 @@ open LineGetter
 
 module Diagonal =
     let northEast currentPos =
-        {X = currentPos.X - 1; Y = currentPos.Y + 1} 
+        {X = currentPos.X + 1; Y = currentPos.Y - 1} 
     let northWest currentPos =
         {X = currentPos.X - 1; Y = currentPos.Y - 1}
     let southEast currentPos =
         {X = currentPos.X + 1; Y = currentPos.Y + 1}
     let southWest currentPos =
-        {X = currentPos.X + 1; Y = currentPos.Y - 1}
+        {X = currentPos.X - 1; Y = currentPos.Y + 1}
 
     let getDiagonalAllDirections (grid: Grid) (initialPosition: Coordinate) : DiagonalDirections =
         let maxPosition = Enumerable.Count grid

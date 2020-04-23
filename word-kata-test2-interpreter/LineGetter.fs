@@ -9,5 +9,5 @@ module LineGetter =
             || current.X < 0
             || current.Y < 0) then ""
         else
-            (string) grid.[current.X].[current.Y]
+            (string) grid.[current.Y].[current.X]
             + getSingle(grid, stop, (positionFunction current), positionFunction)

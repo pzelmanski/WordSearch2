@@ -6,7 +6,7 @@ module Coordinates =
     let private getPositionsOfWordsFirstLetter (firstLetter: FirstLetter) (verticalIndex: int) (line: string) =
         match line.IndexOf(firstLetter) with
         | -1 -> None
-        | index -> Some {X = verticalIndex; Y = index}
+        | horizontalIndex -> Some {X = horizontalIndex; Y = verticalIndex}
     
     let OfFirstLetter (submission : FirstLetterSubmission) =
         submission.Grid

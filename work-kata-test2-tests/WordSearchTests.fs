@@ -25,7 +25,8 @@ let ``Should return diagonal properly`` () =
           Word = word }
 
     let expected = true
-    WordSearch.find submission
+    submission
+    |> WordSearch.find 
     |> should equal expected
 
 
@@ -44,7 +45,8 @@ let ``Should return straight properly`` () =
           Word = word }
 
     let expected = true
-    WordSearch.find submission
+    submission
+    |> WordSearch.find 
     |> should equal expected
     
 
@@ -64,7 +66,8 @@ let ``Should return false when not found`` () =
           Word = word }
 
     let expected = false
-    WordSearch.find submission
+    submission
+    |> WordSearch.find
     |> should equal expected
     
 
@@ -83,7 +86,6 @@ let ``Should return false when given empty string`` () =
           Word = word }
 
     let expected = false
-    WordSearch.find submission
+    submission
+    |> WordSearch.find
     |> should equal expected
-    
-

@@ -7,10 +7,10 @@ open Converters
 open LineGetter
 
 module Straight =
-    let up currentPos = {X = currentPos.X - 1; Y = currentPos.Y} 
-    let down currentPos = {X = currentPos.X + 1; Y = currentPos.Y}
-    let left currentPos = {X = currentPos.X; Y = currentPos.Y - 1}
-    let right currentPos = {X = currentPos.X; Y = currentPos.Y + 1}
+    let up currentPos = {X = currentPos.X; Y = currentPos.Y - 1} 
+    let down currentPos = {X = currentPos.X; Y = currentPos.Y + 1}
+    let left currentPos = {X = currentPos.X - 1; Y = currentPos.Y}
+    let right currentPos = {X = currentPos.X + 1; Y = currentPos.Y}
     
     let private getDiagonalAllDirections (grid : Grid) (initialPosition: Coordinate) : StraightDirections =
         let maxPosition = Enumerable.Count grid 
