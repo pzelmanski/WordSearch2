@@ -1,10 +1,10 @@
-﻿module work_kata_test2_Tests.WordSearchTests
+﻿module word_kata_tests.WordSearchTests
 
 open Xunit
 open FsUnit
-open word_kata_test2_specification
-open word_kata_test2_specification.Language
-open work_kata_test2
+open word_kata_specification
+open word_kata_specification.Language
+open word_kata_interpreter
 
 type MyDirections = Language.Directions
 

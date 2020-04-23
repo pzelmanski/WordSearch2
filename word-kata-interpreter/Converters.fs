@@ -1,7 +1,7 @@
-﻿namespace work_kata_test2
+﻿namespace word_kata_interpreter
 
-open word_kata_test2_specification.Operations
-open word_kata_test2_specification.Language
+open word_kata_specification.Operations
+open word_kata_specification.Language
 
 module Converters =
     let submissionToFirstLetterSubmission: SubmissionIntoFirstLetterSubmission =

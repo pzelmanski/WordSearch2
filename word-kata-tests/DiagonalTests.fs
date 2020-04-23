@@ -1,16 +1,14 @@
-namespace work_kata_test2_Tests
+namespace word_kata_tests
 
-open word_kata_test2_specification
-open work_kata_test2
+open word_kata_specification
+open word_kata_specification.Language
+open word_kata_interpreter
+open Diagonal
+open WordSearch
+open FsUnit
+open Xunit
 
 module DiagonalTests =
-
-    open FsUnit
-    open Xunit
-    open Diagonal
-    open word_kata_test2_specification.Language
-    open WordSearch
-
     type MyDirections = Language.Directions
 
     [<Fact>]

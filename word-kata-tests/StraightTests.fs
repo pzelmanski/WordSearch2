@@ -1,13 +1,12 @@
-﻿namespace work_kata_test2_Tests
+﻿namespace word_kata_tests
 
-open word_kata_test2_specification
+open word_kata_specification
+open Xunit
+open word_kata_interpreter
+open FsUnit
+open word_kata_specification.Language
 
 module StraightTests =
-    open Xunit
-    open work_kata_test2
-    open FsUnit
-    open word_kata_test2_specification.Language
-
     type MyDirections = Language.Directions
     
     [<Fact>]

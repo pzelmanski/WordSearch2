@@ -1,6 +1,6 @@
-﻿namespace work_kata_test2
+﻿namespace word_kata_interpreter
 
-open word_kata_test2_specification.Language
+open word_kata_specification.Language
 
 module Coordinates =
     let private getPositionsOfWordsFirstLetter (firstLetter: FirstLetter) (verticalIndex: int) (line: string) =

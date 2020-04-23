@@ -1,4 +1,4 @@
-﻿namespace word_kata_test2_specification
+﻿namespace word_kata_specification
 
 open Language
 
