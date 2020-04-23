@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "word-kata-test2-interpreter", "word-kata-test2-interpreter\word-kata-test2-interpreter.fsproj", "{B7A52870-BE5D-4232-A95C-A8AA5E3E6688}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "word-kata-interpreter", "word-kata-interpreter\word-kata-interpreter.fsproj", "{B7A52870-BE5D-4232-A95C-A8AA5E3E6688}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "work-kata-test2-tests", "work-kata-test2-tests\work-kata-test2-tests.fsproj", "{37D8606C-2649-4777-975B-35641B4A7F5C}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "word-kata-tests", "word-kata-tests\word-kata-tests.fsproj", "{37D8606C-2649-4777-975B-35641B4A7F5C}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "word-kata-test2-specification", "word-kata-test2-specification\word-kata-test2-specification.fsproj", "{D0E13E32-F2B6-45BB-9C03-7FB364528520}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "word-kata-specification", "word-kata-specification\word-kata-specification.fsproj", "{D0E13E32-F2B6-45BB-9C03-7FB364528520}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

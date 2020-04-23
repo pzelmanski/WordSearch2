@@ -3,7 +3,7 @@
   <component name="ContentModelStore">
     <e p="C:\repo\WordSearch2" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
-      <e p="word-kata-test2-interpreter" t="IncludeRecursive">
+      <e p="word-kata-interpreter" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Converters.fs" t="Include" />
         <e p="Coordinates.fs" t="Include" />
@@ -11,24 +11,24 @@
         <e p="LineGetter.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Straight.fs" t="Include" />
-        <e p="word-kata-test2-interpreter.fsproj" t="IncludeRecursive" />
+        <e p="word-kata-interpreter.fsproj" t="IncludeRecursive" />
         <e p="WordSearch.fs" t="Include" />
       </e>
-      <e p="word-kata-test2-specification" t="IncludeRecursive">
+      <e p="word-kata-specification" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Language.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Operations.fs" t="Include" />
-        <e p="word-kata-test2-specification.fsproj" t="IncludeRecursive" />
+        <e p="word-kata-specification.fsproj" t="IncludeRecursive" />
       </e>
-      <e p="work-kata-test2-Tests" t="IncludeRecursive">
+      <e p="word-kata-tests" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DiagonalTests.fs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.fs" t="Include" />
         <e p="StraightTests.fs" t="Include" />
+        <e p="word-kata-tests.fsproj" t="IncludeRecursive" />
         <e p="WordSearchTests.fs" t="Include" />
-        <e p="work-kata-test2-Tests.fsproj" t="IncludeRecursive" />
       </e>
       <e p="work-kata-test2.sln" t="IncludeFlat" />
     </e>

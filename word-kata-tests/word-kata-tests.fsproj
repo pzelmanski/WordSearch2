@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\word-kata-test2-interpreter\word-kata-test2-interpreter.fsproj" />
+      <ProjectReference Include="..\word-kata-interpreter\word-kata-interpreter.fsproj" />
     </ItemGroup>
 
 </Project>

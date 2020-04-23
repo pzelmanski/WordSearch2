@@ -32,7 +32,9 @@ module DiagonalTests =
                 SE = "aei" } ]
 
         // Act & Assert
-        Diagonal.singleLines submission |> should equal expected
+        submission
+        |> Diagonal.singleLines
+        |> should equal expected
 
     [<Fact>]
     let ``It should properly inject SingleLines into a GetSth``() =
@@ -55,7 +57,8 @@ module DiagonalTests =
             |> Some
 
         // Act & Assert
-        directions getDirections submission
+        submission
+        |> directions getDirections 
         |> should equal expected
 
 
@@ -80,7 +83,8 @@ module DiagonalTests =
                 SE = "n" } ]
 
         // Act & Assert
-        singleLines submission
+        submission
+        |> singleLines 
         |> should equal expected
 
     [<Fact>]
@@ -100,7 +104,8 @@ module DiagonalTests =
         let expected = List.empty<DiagonalDirections>
 
         // Act & Assert
-        singleLines submission
+        submission
+        |> singleLines 
         |> should equal expected
 
 
@@ -124,5 +129,6 @@ module DiagonalTests =
                 SE = "fo" } ]
 
         // Act & Assert
-        singleLines submission
+        submission
+        |> singleLines 
         |> should equal expected

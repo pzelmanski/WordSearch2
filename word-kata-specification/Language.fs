@@ -51,6 +51,5 @@ module Language =
     type AllDirections =
         {
             Lines : SingleLine list
-            
         }
     
