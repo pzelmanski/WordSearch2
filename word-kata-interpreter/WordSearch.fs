@@ -24,7 +24,7 @@ module WordSearch =
     
     let HasWordInIt (word : Word)(allDirections : AllDirections) : bool =
         allDirections.Lines
-        |> List.contains word
+        |> List.exists (fun x -> x.Contains word)
     
     let find submission =
         submission

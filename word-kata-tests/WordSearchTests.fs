@@ -50,6 +50,26 @@ let ``Should return straight properly`` () =
     |> should equal expected
     
 
+[<Fact>]
+let ``Should return true when looking for a substring`` () =
+    let grid =
+        [ "abcde"
+          "fshij"
+          "klmno"
+          "pqrst"
+          "vwxyz" ]
+    let word = "shi"
+
+    let submission =
+        { Grid = grid
+          Word = word }
+
+    let expected = true
+    submission
+    |> WordSearch.find 
+    |> should equal expected
+    
+
 
 [<Fact>]
 let ``Should return false when not found`` () =
